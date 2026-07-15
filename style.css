@@ -745,6 +745,122 @@ section h2::after{
 }
 
 /* ==================================================
+   FORMAÇÃO
+================================================== */
+
+.timeline{
+
+    max-width:900px;
+
+    margin:60px auto 0;
+
+    position:relative;
+
+    padding-left:35px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:8px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:#A855F7;
+
+    border-radius:50px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:-36px;
+
+    top:8px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#A855F7;
+
+    box-shadow:0 0 20px rgba(168,85,247,.6);
+
+}
+
+.timeline-content{
+
+    background:#111827;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(168,85,247,.25);
+
+    transition:.35s;
+
+}
+
+.timeline-content:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#A855F7;
+
+    box-shadow:0 15px 35px rgba(168,85,247,.25);
+
+}
+
+.timeline-content h3{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+    color:#fff;
+
+}
+
+.timeline-content span{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:#A855F7;
+
+    font-weight:600;
+
+}
+
+.timeline-content p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+}
+
+/* ==================================================
    CONTATO
 ================================================== */
 
