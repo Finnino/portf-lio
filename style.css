@@ -694,23 +694,23 @@ footer p{
    ANIMAÇÕES
 ================================================== */
 
-.hidden{
+#.hidden{
 
-    opacity:0;
+    # opacity:0;
 
-    transform:translateY(60px);
+    # transform:translateY(60px);
 
-    transition:.8s;
+    # transition:.8s;
 
-}
+# }
 
-.show{
+#.show{
 
-    opacity:1;
+    # opacity:1;
 
-    transform:translateY(0);
+   # transform:translateY(0);
 
-}
+# }
 
 /* ==================================================
    RESPONSIVIDADE
