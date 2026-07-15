@@ -1,1 +1,1033 @@
 
+/* ==================================================
+   RESET E CONFIGURAÇÕES GERAIS
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#F8FAFC;
+    background:
+        radial-gradient(circle at top,#4C1D95 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#6D28D9 0%,transparent 30%),
+        #09090B;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+:root{
+
+    --background:#09090B;
+    --surface:#111827;
+    --surface-2:#162033;
+
+    --purple:#A855F7;
+    --purple-dark:#6D28D9;
+    --purple-light:#C084FC;
+
+    --text:#F8FAFC;
+    --text-secondary:#CBD5E1;
+
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    background:rgba(9,9,11,.90);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(168,85,247,.15);
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--purple);
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:28px;
+
+}
+
+.navbar a{
+
+    color:var(--text);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:var(--purple);
+
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:150px 8% 80px;
+
+}
+
+.hero-content{
+
+    max-width:850px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(168,85,247,.15);
+
+    border:1px solid var(--purple);
+
+    color:var(--purple-light);
+
+    margin-bottom:25px;
+
+    font-size:.95rem;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+    color:var(--purple);
+
+    text-shadow:0 0 25px rgba(168,85,247,.4);
+
+}
+
+.hero h2{
+
+    font-size:30px;
+
+    color:var(--purple-light);
+
+    min-height:40px;
+
+    margin-bottom:30px;
+
+}
+
+.hero-description{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+
+/* ==================================================
+   BOTÕES
+================================================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+    color:#fff;
+
+    box-shadow:0 10px 25px rgba(168,85,247,.30);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(168,85,247,.45);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--purple);
+
+    color:var(--purple);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--purple);
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==================================================
+   SEÇÕES
+================================================== */
+
+section{
+
+    padding:100px 10%;
+
+}
+
+section h2{
+
+    font-size:42px;
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+    color:var(--text);
+
+    position:relative;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    width:70px;
+
+    height:4px;
+
+    background:var(--purple);
+
+    display:block;
+
+    margin:15px auto 0;
+
+    border-radius:999px;
+
+}
+
+/* ==================================================
+   SOBRE
+================================================== */
+
+#sobre p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:2;
+
+    color:var(--text-secondary);
+
+}
+
+/* ==================================================
+   ESTATÍSTICAS
+================================================== */
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:60px;
+
+}
+
+.stats div{
+
+    width:220px;
+
+    padding:30px;
+
+    background:var(--surface-2);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:1px solid rgba(168,85,247,.20);
+
+    transition:.35s;
+
+}
+
+.stats div:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--purple);
+
+    box-shadow:0 12px 30px rgba(168,85,247,.25);
+
+}
+
+.stats h3{
+
+    font-size:34px;
+
+    color:var(--purple);
+
+    margin-bottom:10px;
+
+}
+
+/* ==================================================
+   HERO CARDS
+================================================== */
+
+.hero-cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:60px;
+
+}
+
+.hero-card{
+
+    width:180px;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    border:1px solid rgba(168,85,247,.20);
+
+    transition:.35s;
+
+}
+
+.hero-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--purple);
+
+    box-shadow:0 12px 30px rgba(168,85,247,.25);
+
+}
+
+.hero-card h3{
+
+    font-size:36px;
+
+    margin-bottom:12px;
+
+}
+
+.hero-card p{
+
+    color:var(--text-secondary);
+
+}
+
+/* ==================================================
+   TECNOLOGIAS
+================================================== */
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.card{
+
+    background:var(--surface);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(168,85,247,.20);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--purple);
+
+    box-shadow:0 15px 35px rgba(168,85,247,.30);
+
+}
+
+.card i{
+
+    font-size:45px;
+
+    color:var(--purple);
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+.card h4{
+
+    font-size:22px;
+
+    color:var(--purple);
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/* ==================================================
+   CONHECIMENTOS
+================================================== */
+
+.skill{
+
+    max-width:700px;
+
+    margin:35px auto;
+
+}
+
+.skill p{
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.progress{
+
+    height:12px;
+
+    background:#1E293B;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress div{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#7C3AED,#C084FC);
+
+    border-radius:999px;
+
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer{
+
+    margin-top:120px;
+
+    padding:60px 8%;
+
+    text-align:center;
+
+    background:#07070A;
+
+    border-top:1px solid rgba(168,85,247,.15);
+
+}
+
+footer h3{
+
+    font-size:30px;
+
+    color:var(--purple);
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+.social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin:30px 0;
+
+}
+
+.social a{
+
+    font-size:30px;
+
+    transition:.3s;
+
+}
+
+.social a:hover{
+
+    color:var(--purple);
+
+    transform:translateY(-5px);
+
+}
+
+/* ==================================================
+   BOTÃO TOPO
+================================================== */
+
+#topo{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    color:#fff;
+
+    font-size:20px;
+
+    box-shadow:0 0 20px rgba(168,85,247,.35);
+
+    z-index:999;
+
+    transition:.3s;
+
+}
+
+#topo:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:.8s;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:80px 7%;
+
+    }
+
+    .hero{
+
+        padding:170px 7% 70px;
+
+    }
+
+    .project{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .project-content{
+
+        width:100%;
+
+    }
+
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width:768px){
+
+    header{
+
+        padding:15px 6%;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .navbar ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:220px 6% 70px;
+
+    }
+
+    .badge{
+
+        font-size:.8rem;
+
+        padding:8px 16px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .hero h2{
+
+        font-size:22px;
+
+        min-height:30px;
+
+    }
+
+    .hero-description{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .buttons a{
+
+        width:100%;
+
+        max-width:320px;
+
+        justify-content:center;
+
+    }
+
+    .hero-cards{
+
+        gap:15px;
+
+    }
+
+    .hero-card{
+
+        width:150px;
+
+        padding:18px;
+
+    }
+
+    .hero-card h3{
+
+        font-size:30px;
+
+    }
+
+    section{
+
+        padding:70px 6%;
+
+    }
+
+    section h2{
+
+        font-size:34px;
+
+    }
+
+    .stats{
+
+        gap:18px;
+
+    }
+
+    .stats div{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    .tech-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    .card h3{
+
+        font-size:34px;
+
+    }
+
+    .card h4{
+
+        font-size:20px;
+
+    }
+
+    .project-placeholder{
+
+        width:180px;
+
+        height:180px;
+
+        font-size:70px;
+
+    }
+
+    .project-content h3{
+
+        font-size:32px;
+
+    }
+
+    .project-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .project-buttons a{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .timeline{
+
+        padding-left:22px;
+
+    }
+
+    .timeline-dot{
+
+        left:-24px;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-card{
+
+        padding:25px;
+
+    }
+
+    footer{
+
+        padding:50px 6%;
+
+    }
+
+}
+
+/* ================= CELULARES PEQUENOS ================= */
+
+@media (max-width:480px){
+
+    .hero{
+
+        padding-top:240px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero h2{
+
+        font-size:19px;
+
+    }
+
+    .hero-description{
+
+        font-size:15px;
+
+    }
+
+    .hero-card{
+
+        width:100%;
+
+        max-width:250px;
+
+    }
+
+    .project-placeholder{
+
+        width:150px;
+
+        height:150px;
+
+        font-size:58px;
+
+    }
+
+    .project-content h3{
+
+        font-size:28px;
+
+    }
+
+    section h2{
+
+        font-size:30px;
+
+    }
+
+    #topo{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:18px;
+
+    }
+
+      }
