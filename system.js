@@ -102,3 +102,9 @@ document.querySelectorAll(".hidden").forEach(el=>{
     observer.observe(el);
 
 });
+
+console.log("Script carregado!");
+
+document.querySelectorAll(".hidden").forEach(el => {
+    el.classList.add("show");
+});
