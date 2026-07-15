@@ -1,121 +1,104 @@
-/* ==================================================
-   TEXTO DIGITANDO
-================================================== */
-
 const textos = [
-    "Desenvolvedor em Formação",
-    "Java",
-    "JavaScript",
-    "Banco de Dados",
-    "Análise de Dados",
-    "Suporte em TI"
+  "Desenvolvedor em Formação",
+  "Java",
+  "JavaScript",
+  "Banco de Dados",
+  "Análise de Dados",
+  "Suporte em TI"
 ];
 
-const typingElement = document.getElementById("typing");
+const elemento = document.getElementById("typing");
 
-let textoAtual = 0;
-let letraAtual = 0;
-let apagando = false;
+if (elemento) {
 
-function escrever() {
+    let textoAtual = 0;
+    let letraAtual = 0;
+    let apagando = false;
 
-    if (!typingElement) return;
+    function escrever(){
 
-    const texto = textos[textoAtual];
+        const texto = textos[textoAtual];
 
-    if (!apagando) {
+        if(!apagando){
 
-        typingElement.textContent = texto.substring(0, letraAtual + 1);
+            elemento.textContent = texto.substring(0, letraAtual + 1);
 
-        letraAtual++;
+            letraAtual++;
 
-        if (letraAtual === texto.length) {
+            if(letraAtual === texto.length){
 
-            apagando = true;
+                apagando = true;
 
-            setTimeout(escrever, 1500);
+                setTimeout(escrever,1500);
 
-            return;
-        }
+                return;
 
-    } else {
+            }
 
-        typingElement.textContent = texto.substring(0, letraAtual - 1);
+        }else{
 
-        letraAtual--;
+            elemento.textContent = texto.substring(0, letraAtual - 1);
 
-        if (letraAtual === 0) {
+            letraAtual--;
 
-            apagando = false;
+            if(letraAtual === 0){
 
-            textoAtual++;
+                apagando = false;
 
-            if (textoAtual >= textos.length) {
+                textoAtual++;
 
-                textoAtual = 0;
+                if(textoAtual >= textos.length){
+
+                    textoAtual = 0;
+
+                }
 
             }
 
         }
 
+        setTimeout(escrever, apagando ? 50 : 100);
+
     }
 
-    setTimeout(escrever, apagando ? 50 : 100);
+    escrever();
 
 }
 
-escrever();
+const topo = document.getElementById("topo");
 
-/* ==================================================
-   BOTÃO VOLTAR AO TOPO
-================================================== */
+if(topo){
 
-const botaoTopo = document.getElementById("topo");
-
-if (botaoTopo) {
-
-    botaoTopo.addEventListener("click", () => {
+    topo.onclick = () => {
 
         window.scrollTo({
 
-            top: 0,
+            top:0,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
-    });
+    };
 
 }
 
-/* ==================================================
-   ANIMAÇÃO AO ROLAR A PÁGINA
-================================================== */
+const observer = new IntersectionObserver((entries)=>{
 
-const elementos = document.querySelectorAll(".hidden");
+    entries.forEach(entry=>{
 
-const observer = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
-
-            observer.unobserve(entry.target);
 
         }
 
     });
 
-}, {
-
-    threshold: 0.15
-
 });
 
-elementos.forEach(elemento => {
+document.querySelectorAll(".hidden").forEach(el=>{
 
-    observer.observe(elemento);
+    observer.observe(el);
 
 });
