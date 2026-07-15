@@ -587,6 +587,108 @@ section h2::after{
 }
 
 /* ==================================================
+   CONTATO
+================================================== */
+
+#contato{
+
+    text-align:center;
+
+}
+
+#contato p{
+
+    color:var(--text-secondary);
+
+    margin:20px auto 40px;
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.contact-card{
+
+    background:var(--surface);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(168,85,247,.20);
+
+    transition:.35s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--purple);
+
+    box-shadow:0 15px 35px rgba(168,85,247,.30);
+
+}
+
+.contact-card i{
+
+    font-size:42px;
+
+    color:var(--purple);
+
+    margin-bottom:18px;
+
+}
+
+.contact-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--text);
+
+}
+
+.contact-card a{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 20px;
+
+    background:var(--purple);
+
+    color:#fff;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.contact-card a:hover{
+
+    background:#9333EA;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==================================================
    FOOTER
 ================================================== */
 
