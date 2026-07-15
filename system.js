@@ -1,13 +1,17 @@
+/* ==================================================
+   TEXTO DIGITANDO
+================================================== */
+
 const textos = [
-  "Desenvolvedor em Formação",
-  "Java",
-  "JavaScript",
-  "Banco de Dados",
-  "Análise de Dados",
-  "Suporte em TI"
+    "Desenvolvedor em Formação",
+    "Java",
+    "JavaScript",
+    "Banco de Dados",
+    "Análise de Dados",
+    "Suporte em TI"
 ];
 
-const elemento = document.getElementById("typing");
+const typingElement = document.getElementById("typing");
 
 let textoAtual = 0;
 let letraAtual = 0;
@@ -15,39 +19,40 @@ let apagando = false;
 
 function escrever() {
 
+    if (!typingElement) return;
+
     const texto = textos[textoAtual];
 
-    if(!apagando){
+    if (!apagando) {
 
-        elemento.textContent = texto.substring(0, letraAtual + 1);
+        typingElement.textContent = texto.substring(0, letraAtual + 1);
 
         letraAtual++;
 
-        if(letraAtual === texto.length){
+        if (letraAtual === texto.length) {
 
             apagando = true;
 
-            setTimeout(escrever,1500);
+            setTimeout(escrever, 1500);
 
             return;
-
         }
 
-    }else{
+    } else {
 
-        elemento.textContent = texto.substring(0, letraAtual - 1);
+        typingElement.textContent = texto.substring(0, letraAtual - 1);
 
         letraAtual--;
 
-        if(letraAtual===0){
+        if (letraAtual === 0) {
 
-            apagando=false;
+            apagando = false;
 
             textoAtual++;
 
-            if(textoAtual>=textos.length){
+            if (textoAtual >= textos.length) {
 
-                textoAtual=0;
+                textoAtual = 0;
 
             }
 
@@ -55,42 +60,62 @@ function escrever() {
 
     }
 
-    setTimeout(escrever,apagando?50:100);
+    setTimeout(escrever, apagando ? 50 : 100);
 
 }
 
 escrever();
 
-document
-.getElementById("topo")
-.onclick=()=>{
+/* ==================================================
+   BOTÃO VOLTAR AO TOPO
+================================================== */
 
-window.scrollTo({
+const botaoTopo = document.getElementById("topo");
 
-top:0,
+if (botaoTopo) {
 
-behavior:"smooth"
+    botaoTopo.addEventListener("click", () => {
 
-});
+        window.scrollTo({
 
-}
+            top: 0,
 
-const observer = new IntersectionObserver((entries)=>{
+            behavior: "smooth"
 
-entries.forEach(entry=>{
+        });
 
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
+    });
 
 }
 
-});
+/* ==================================================
+   ANIMAÇÃO AO ROLAR A PÁGINA
+================================================== */
+
+const elementos = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
 
 });
 
-document.querySelectorAll(".hidden").forEach(el=>{
+elementos.forEach(elemento => {
 
-observer.observe(el);
+    observer.observe(elemento);
 
 });
