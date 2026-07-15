@@ -695,8 +695,14 @@ footer p{
 ================================================== */
 
 .hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:.8s;
+}
+
+.show{
     opacity:1;
-    transform:none;
+    transform:translateY(0);
 }
 
 /* ==================================================
